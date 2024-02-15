@@ -1,4 +1,4 @@
-import 'package:bankenstein/models/user_model.dart';
+import 'package:bankenstein/models/user_firebase_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -19,9 +19,9 @@ abstract class AuthenticationDataSource {
     );
   }
 
-  static Stream<UserModel?> status() {
-    return FirebaseAuth.instance.authStateChanges().map(
-        (event) => event != null ? UserModel.fromFirebaseUser(event) : null);
+  static Stream<UserFirebaseModel?> status() {
+    return FirebaseAuth.instance.authStateChanges().map((event) =>
+        event != null ? UserFirebaseModel.fromFirebaseUser(event) : null);
   }
 
   static Future<void> logOut() async {

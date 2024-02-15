@@ -1,5 +1,5 @@
 import 'package:bankenstein/data/authentication_data_source.dart';
-import 'package:bankenstein/models/user_model.dart';
+import 'package:bankenstein/models/user_firebase_model.dart';
 
 abstract class AuthenticationService {
   static Future<void> signIn(String email, String password) async {
@@ -14,7 +14,7 @@ abstract class AuthenticationService {
     return await AuthenticationDataSource.logOut();
   }
 
-  static Stream<UserModel?> status() {
+  static Stream<UserFirebaseModel?> status() {
     return AuthenticationDataSource.status();
   }
 }
