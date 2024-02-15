@@ -1,4 +1,8 @@
 import 'package:bankenstein/blocs/authentication_cubbit.dart';
+import 'package:bankenstein/blocs/user_cubbit.dart';
+import 'package:bankenstein/models/user_firebase_model.dart';
+import 'package:bankenstein/presentation/component/home_builder.dart';
+import 'package:bankenstein/services/authentication_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,46 +14,55 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appBarColor = Theme.of(context).colorScheme.primary;
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appBarColor,
-        title: const Row(
-          children: [
-            Text(
-              'Home',
-              style: TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {
-                context.read<AuthenticationCubit>().logOut();
+// permet de récupérer l'email afin de récupérer la date de l'utilisateur connecté
+    return StreamBuilder<UserFirebaseModel?>(
+      stream: AuthenticationService
+          .status(), // Écouter les changements de l'état de l'authentification
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.active) {
+          final user =
+              snapshot.data; // Récupérer l'utilisateur actuellement connecté
+
+          if (user != null && user.email != null) {
+            return BlocProvider<UserCubit>(
+              create: (_) {
+                final userCubit = UserCubit();
+                userCubit.getOneUser(user.email!);
+                return userCubit;
               },
-              icon: const Icon(Icons.logout))
-        ],
-      ),
-      body: const Center(
-        child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Welcome Alexis Vandepitte',
-                style: TextStyle(fontSize: 24),
+              child: Scaffold(
+                appBar: AppBar(
+                  backgroundColor: appBarColor,
+                  title: const Row(
+                    children: [
+                      Text(
+                        'Home',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                  actions: [
+                    IconButton(
+                        onPressed: () {
+                          context.read<AuthenticationCubit>().logOut();
+                        },
+                        icon: const Icon(Icons.logout))
+                  ],
+                ),
+                body: const HomeBuilder(),
               ),
-              Text(
-                'Use the navigation bar to go to your accounts or to transfer money',
-                style: TextStyle(fontSize: 12),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
-      ),
+            );
+          } else {
+            // Aucun utilisateur connecté
+            return CircularProgressIndicator();
+          }
+        } else {
+          // La connexion à l'état de l'authentification n'est pas encore terminée
+          return CircularProgressIndicator();
+        }
+      },
     );
   }
 }

@@ -1,16 +1,18 @@
-abstract class VehiculesStaticDataSource {
-  static Future<List<Map<String, dynamic>>> getVehicules() async => _vehicules;
+abstract class UserStaticDataSource {
+  static Future<List<Map<String, dynamic>>> getUsers() async => _vehicules;
 
   static final _vehicules = [
     {
-      'lastName': 'Alexis',
-      'firstName': 'Vandepitte',
+      'id': 1,
+      'firstName': 'Alexis',
+      'lastName': 'Vandepitte',
       'email': 'student@oclock.io',
     },
     {
-      'lastName': 'John',
-      'firstName': 'Doe',
-      'email': 'test@gmail.com ',
+      'id': 2,
+      'firstName': 'John',
+      'lastName': 'Doe',
+      'email': 'test@gmail.com',
     }
   ];
 }

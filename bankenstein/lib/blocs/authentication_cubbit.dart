@@ -1,15 +1,10 @@
 import 'package:bankenstein/services/authentication_service.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthenticationCubit extends Cubit<AuthenticationState> {
   AuthenticationCubit() : super(AuthenticationStateUnknown()) {
     AuthenticationService.status().listen((event) {
-      debugPrint('----------------------');
-      debugPrint('NEW AUTH EVENT FROM FIREBASE AUTH');
-      debugPrint('----------------------');
-
       if (event != null) {
         emit(AuthenticationStateAuthenticated());
       } else {
@@ -22,6 +17,7 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
     try {
       await AuthenticationService.signIn(email, password);
     } catch (e) {
+      debugPrint(email);
       debugPrint(e.toString());
       emit(AuthenticationStateError(message: e.toString()));
     }
