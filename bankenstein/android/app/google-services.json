@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "666665555997",
+    "project_id": "bankenstein-65a29",
+    "storage_bucket": "bankenstein-65a29.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666665555997:android:3231642d57e943e49bcef4",
+        "android_client_info": {
+          "package_name": "com.example.bankenstein"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFAZ0PGrk8qdkojxbT3yTw1SI8Vw5ejh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
