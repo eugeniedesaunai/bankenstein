@@ -1,0 +1,40 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor Utilisateur as User
+rectangle "Application Bankenstein" {
+  usecase "Se connecter à son compte utilisateur" as Connexion
+  usecase "Avoir un message d'accueil sur la page d'accueil" as MessageAccueil
+  usecase "Voir ses comptes" as VoirComptes
+  usecase "Avoir un récapitulatif des 3 dernières transactions sur la page d'accueil" as RecapTransactions
+  usecase "Avoir la possibilité d'éditer un RIB depuis la page d'accueil" as EditerRIB
+  usecase "Accéder aux paramètres" as Parametres
+  usecase "Voir le détail d'un compte" as DetailCompte
+  usecase "Avoir la possibilité d'éditer un RIM depuis le détail d'un compte" as EditerRIM
+  usecase "Option mode sombre dans les paramètres de l'application" as ModeSombre
+  usecase "Changement de langue depuis les paramètres de l'application" as ChangementLangue
+  usecase "Bénéficiaire" as Beneficiaire
+  usecase "Ajouter un bénéficiaire grâce à son IBAN" as AjouterBeneficiaire
+  usecase "Faire un virement à un bénéficiaire" as VirementBeneficiaire
+
+  User --> Connexion : Utilise
+  Connexion --> MessageAccueil : Inclut
+  Connexion --> VoirComptes : Inclut
+  Connexion --> RecapTransactions : Inclut
+  Connexion --> EditerRIB : Inclut
+  Connexion --> Parametres : Inclut
+  Connexion --> Beneficiaire : Inclut
+
+  VoirComptes --> DetailCompte : Étend
+  DetailCompte --> EditerRIM : Étend
+
+  Parametres --> ModeSombre : Étend
+  Parametres --> ChangementLangue : Étend
+
+  Beneficiaire --> AjouterBeneficiaire : Étend
+  Beneficiaire --> VirementBeneficiaire : Étend
+}
+
+@enduml
