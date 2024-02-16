@@ -2,6 +2,10 @@ import 'package:bankenstein/services/authentication_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+///////
+/// Class qui permettent d'appeler le service qui gère l'authentification,
+///  et qui seront instancier grâce au Bloc Provider et bloc Builder dans les vues
+//////
 class AuthenticationCubit extends Cubit<AuthenticationState> {
   AuthenticationCubit() : super(AuthenticationStateUnknown()) {
     AuthenticationService.status().listen((event) {
@@ -20,14 +24,6 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       debugPrint(email);
       debugPrint(e.toString());
       emit(AuthenticationStateError(message: e.toString()));
-    }
-  }
-
-  Future<void> signUp(String email, String password) async {
-    try {
-      await AuthenticationService.signUp(email, password);
-    } catch (e) {
-      debugPrint(e.toString());
     }
   }
 

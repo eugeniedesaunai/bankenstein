@@ -1,3 +1,7 @@
+///////
+/// Class static avec de la data d'utilisateur
+//////
+
 abstract class UserStaticDataSource {
   static Future<List<Map<String, dynamic>>> getUsers() async => _vehicules;
 

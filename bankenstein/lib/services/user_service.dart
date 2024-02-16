@@ -1,12 +1,10 @@
 import 'package:bankenstein/data/user_static_data_source.dart';
 import 'package:bankenstein/models/user_model.dart';
 
+///////
+/// Class qui permet d'appeler la dataSource correspondant à l'utilisateur - UserStaticDataSource
+//////
 abstract class UserService {
-  // static Future<List<UserModel>> getUsers() async {
-  //   final usersAsJson = await UserStaticDataSource.getUsers();
-  //   return usersAsJson.map((e) => UserModel.fromJson(e)).toList();
-  // }
-
   static Future<UserModel?> getOneUser(String email) async {
     final usersAsJson = await UserStaticDataSource.getUsers();
 

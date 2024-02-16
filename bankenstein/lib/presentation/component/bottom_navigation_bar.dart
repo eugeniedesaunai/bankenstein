@@ -43,8 +43,8 @@ class _BottomNavigationBarComponentState
         context.pushNamed(PreferencePage.name);
         break;
       default:
-        context.goNamed(HomePage.name);
         // Si l'index ne correspond à aucune des valeurs spécifiées.
+        context.goNamed(HomePage.name);
         break;
     }
   }

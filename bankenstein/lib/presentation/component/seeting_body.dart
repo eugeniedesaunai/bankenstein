@@ -30,7 +30,7 @@ class SeetingBody extends StatelessWidget {
                 ),
                 SeetingButtonTheme(
                   onTap: () {
-                    // appel la méthode pour switcher de theme
+                    // appel la méthode pour se déconnecter
                     context.read<AuthenticationCubit>().logOut();
                   },
                   text: "Logout",

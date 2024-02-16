@@ -11,7 +11,6 @@ class UserModel {
     required this.email,
   });
 
-  // checker la factory
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         id: json['id'] as int?,
         firstName: json['firstName'] as String?,

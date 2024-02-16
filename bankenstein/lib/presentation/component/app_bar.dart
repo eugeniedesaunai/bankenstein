@@ -58,6 +58,7 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
+// permet de sized de la bonne manière la taille de l'appBar
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
