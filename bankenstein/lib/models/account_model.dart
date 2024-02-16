@@ -1,5 +1,4 @@
 import 'package:bankenstein/models/transaction_model.dart';
-import 'package:bankenstein/models/user_model.dart';
 
 class AccountModel {
   AccountModel({
@@ -15,6 +14,6 @@ class AccountModel {
   final String? label;
   final double? balance;
   final String? iban;
-  final UserModel? userId;
+  final int? userId;
   final List<TransactionModel>? transactions;
 }

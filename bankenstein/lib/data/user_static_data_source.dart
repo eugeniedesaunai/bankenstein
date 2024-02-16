@@ -3,9 +3,9 @@
 //////
 
 abstract class UserStaticDataSource {
-  static Future<List<Map<String, dynamic>>> getUsers() async => _vehicules;
+  static Future<List<Map<String, dynamic>>> getUsers() async => _users;
 
-  static final _vehicules = [
+  static final _users = [
     {
       'id': 1,
       'firstName': 'Alexis',
