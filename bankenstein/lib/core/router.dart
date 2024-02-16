@@ -22,15 +22,13 @@ abstract class AppRouter {
           final currentState = context.read<AuthenticationCubit>().state;
           final currentRoute = state.uri.toString();
 
-          if (currentState is AuthenticationStateAuthenticated) {
-            if (currentRoute == _signInPagePath) {
-              return _homPagePath;
-            }
+          if (currentState is AuthenticationStateAuthenticated &&
+              currentRoute == _signInPagePath) {
+            return _homPagePath;
           } else if (!_publicRoutes.contains(currentRoute) &&
               currentState is AuthenticationStateUnauthenticated) {
             return _signInPagePath;
           }
-
           return null;
         },
         initialLocation: _signInPagePath,

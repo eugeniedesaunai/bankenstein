@@ -11,6 +11,7 @@ class UserModel {
     required this.email,
   });
 
+  // checker la factory
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
         id: json['id'] as int?,
         firstName: json['firstName'] as String?,
@@ -18,6 +19,7 @@ class UserModel {
         email: json['email'] as String,
       );
 
+  // pas obligatoire
   @override
   String toString() {
     return 'UserModel{id: $id, firstName: $firstName, lastName: $lastName, email: $email}';

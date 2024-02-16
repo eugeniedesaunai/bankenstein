@@ -53,7 +53,9 @@ class _SignInFormState extends State<SignInForm> {
                       _passwordController.text.trim(),
                     );
               },
-              child: const Text('Sign In'),
+              child: const Text(
+                'Sign In',
+              ),
             ),
           ],
         ),

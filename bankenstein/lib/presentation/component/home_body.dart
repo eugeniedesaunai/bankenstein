@@ -1,11 +1,6 @@
-import 'package:bankenstein/blocs/user_cubbit.dart';
-import 'package:bankenstein/models/user_firebase_model.dart';
 import 'package:bankenstein/models/user_model.dart';
-import 'package:bankenstein/services/authentication_service.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({

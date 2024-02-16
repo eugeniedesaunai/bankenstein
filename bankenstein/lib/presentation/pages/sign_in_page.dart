@@ -8,7 +8,6 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final primaryColor = Theme.of(context).colorScheme.primary;
     return const Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

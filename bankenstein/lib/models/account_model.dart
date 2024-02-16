@@ -11,6 +11,7 @@ class AccountModel {
     required this.transactions,
   });
 
+  // regarder la doc, pour le ?
   final int? id;
   final String? label;
   final double? balance;
