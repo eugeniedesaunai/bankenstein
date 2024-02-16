@@ -1,7 +1,9 @@
 import 'package:bankenstein/blocs/authentication_cubbit.dart';
 import 'package:bankenstein/models/user_model.dart';
+import 'package:bankenstein/presentation/pages/preference_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
   AppBarComponent({
@@ -45,7 +47,7 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
             ),
             IconButton(
                 onPressed: () {
-                  context.read<AuthenticationCubit>().logOut();
+                  context.pushNamed(PreferencePage.name);
                 },
                 icon: const Icon(
                   Icons.account_circle,

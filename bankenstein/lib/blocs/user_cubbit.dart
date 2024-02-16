@@ -23,16 +23,6 @@ class UserStateError extends UserState {
 class UserCubit extends Cubit<UserState> {
   UserCubit() : super(UserStateInitial());
 
-  // Future<void> getUsers() async {
-  //   emit(UserStateLoading());
-  //   try {
-  //     final users = await UserService.getUsers();
-  //     emit(UserStateLoaded(users: users));
-  //   } catch (e) {
-  //     emit(UserStateError(message: e.toString()));
-  //   }
-  // }
-
   Future<void> getOneUser(String email) async {
     emit(UserStateLoading());
     try {

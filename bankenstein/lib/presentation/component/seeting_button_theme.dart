@@ -33,7 +33,7 @@ class SeetingButtonTheme extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 12,
             ),
           ),
