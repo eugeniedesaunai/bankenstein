@@ -45,16 +45,16 @@ class HomePage extends StatelessWidget {
                         BottomNavigationBarComponent(color: primaryColor),
                   );
                 }
-                return const Text('Une erreur c\'est produite');
+                return const SizedBox();
               }),
             );
           } else {
             // Aucun utilisateur connecté
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
         } else {
           // La connexion à l'état de l'authentification n'est pas encore terminée
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         }
       },
     );
