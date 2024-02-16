@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 
 class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
   const AppBarComponent({
-    Key? key,
+    super.key,
     required this.user,
     required this.pageName,
     required this.color,

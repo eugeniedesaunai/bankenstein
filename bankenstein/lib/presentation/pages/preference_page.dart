@@ -38,7 +38,7 @@ class PreferencePage extends StatelessWidget {
                       pageName: name,
                       color: primaryColor,
                     ),
-                    body: SeetingBody(),
+                    body: const SeetingBody(),
                     bottomNavigationBar:
                         BottomNavigationBarComponent(color: primaryColor),
                   );
@@ -48,11 +48,11 @@ class PreferencePage extends StatelessWidget {
             );
           } else {
             // Aucun utilisateur connecté
-            return CircularProgressIndicator();
+            return const CircularProgressIndicator();
           }
         } else {
           // La connexion à l'état de l'authentification n'est pas encore terminée
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         }
       },
     );

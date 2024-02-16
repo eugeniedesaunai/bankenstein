@@ -5,18 +5,18 @@ import 'package:go_router/go_router.dart';
 
 class BottomNavigationBarComponent extends StatefulWidget {
   const BottomNavigationBarComponent({
-    Key? key,
+    super.key,
     required this.color,
-  }) : super(key: key);
+  });
 
   final Color color;
 
   @override
-  _BottomNavigationBarComponentState createState() =>
-      _BottomNavigationBarComponentState();
+  BottomNavigationBarComponentState createState() =>
+      BottomNavigationBarComponentState();
 }
 
-class _BottomNavigationBarComponentState
+class BottomNavigationBarComponentState
     extends State<BottomNavigationBarComponent> {
   int _selectedIndex = 0;
 
