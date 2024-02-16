@@ -12,10 +12,6 @@ ou
 email : student@oclock.io
 password : password@student
 
-## Observation 
-
-Je n'ai pas switcher vers l'api dans l'après midi car ayant regardé comme elle fonctionnait j'aurai du refaire l'authentification et je ne pense pas que j'avais le temps de me pencher sur ça. 
-J'ai pris le parti de continuer la fin du challenge avec des fausses datas. 
 
 ## Questions
 Les factory permet de créer une instance de class et d'appliquer du traitement dessus au besoin. 
