@@ -43,7 +43,7 @@ class PreferencePage extends StatelessWidget {
                         BottomNavigationBarComponent(color: primaryColor),
                   );
                 }
-                return const Text('Une erreur c\'est produite');
+                return const CircularProgressIndicator();
               }),
             );
           } else {

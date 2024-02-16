@@ -11,6 +11,7 @@ class ThemeProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  // permet de switcher en fct du theme actuelle
   void toggleTheme() {
     if (_themeData == lightMode) {
       themeData = darkMode;

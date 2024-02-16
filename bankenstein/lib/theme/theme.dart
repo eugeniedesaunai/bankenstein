@@ -4,13 +4,14 @@ ThemeData lightMode = ThemeData(
     brightness: Brightness.light,
     colorScheme: const ColorScheme.light(
       background: Colors.white,
-      secondary: Colors.lightBlue,
+      primary: Color(0xFF711CCC),
+      secondary: Color.fromARGB(255, 238, 231, 245),
     ));
 
 ThemeData darkMode = ThemeData(
     brightness: Brightness.dark,
-    colorScheme: const ColorScheme.dark(
+    colorScheme: ColorScheme.dark(
       background: Colors.black,
       primary: Colors.black,
-      secondary: Colors.lightBlue,
+      secondary: Colors.grey.shade900,
     ));

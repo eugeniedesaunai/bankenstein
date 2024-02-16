@@ -33,12 +33,8 @@ class MyApp extends StatelessWidget {
       child: Builder(builder: (context) {
         return MaterialApp.router(
           title: 'Flutter Demo',
+          // englobe l'app dans les deux themes
           theme: Provider.of<ThemeProvider>(context).themeData,
-          // theme: ThemeData(
-          //   colorScheme:
-          //       ColorScheme.fromSeed(seedColor: const Color(0xFF711CCC)),
-          //   useMaterial3: true,
-          // ),
           routerConfig: AppRouter.router(context),
         );
       }),

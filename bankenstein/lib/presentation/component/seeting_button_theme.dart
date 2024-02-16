@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
 class SeetingButtonTheme extends StatelessWidget {
-  const SeetingButtonTheme(
-      {super.key, required this.onTap, required this.color});
+  const SeetingButtonTheme({
+    super.key,
+    required this.text,
+    required this.onTap,
+    required this.color,
+  });
+
+  final String text;
   final void Function()? onTap;
   final Color? color;
   @override
@@ -10,13 +16,27 @@ class SeetingButtonTheme extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: 200,
+        height: 50,
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(25),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 2,
+              blurRadius: 7,
+              offset: const Offset(0, 3),
+            ),
+          ],
         ),
-        padding: const EdgeInsets.all(25),
-        child: const Center(
-          child: Text("Change theme"),
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontSize: 12,
+            ),
+          ),
         ),
       ),
     );
